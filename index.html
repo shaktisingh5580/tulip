@@ -3,91 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beautiful Tulip Flower</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #000;
-            margin: 0;
-        }
-
-        .tulip {
-            position: relative;
-            width: 50px;
-            height: 150px;
-            animation: sway 5s infinite ease-in-out;
-        }
-
-        .stem {
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            width: 10px;
-            height: 100px;
-            background-color: green;
-            transform: translateX(-50%);
-        }
-
-        .petal {
-            position: absolute;
-            bottom: 90px;
-            left: 50%;
-            width: 60px;
-            height: 100px;
-            background: radial-gradient(circle at bottom, #ff1493, #ff69b4);
-            border-radius: 50% 50% 0 0;
-            transform: translateX(-50%) rotate(-30deg);
-            animation: glow 2s infinite alternate;
-        }
-
-        .petal::before,
-        .petal::after {
-            content: '';
-            position: absolute;
-            width: 60px;
-            height: 100px;
-            background: radial-gradient(circle at bottom, #ff1493, #ff69b4);
-            border-radius: 50% 50% 0 0;
-        }
-
-        .petal::before {
-            transform: rotate(30deg);
-            transform-origin: bottom right;
-            left: -30px;
-        }
-
-        .petal::after {
-            transform: rotate(-30deg);
-            transform-origin: bottom left;
-            right: -30px;
-        }
-
-        @keyframes glow {
-            0% {
-                box-shadow: 0 0 15px rgba(255, 105, 180, 0.5);
-            }
-            100% {
-                box-shadow: 0 0 30px rgba(255, 105, 180, 1);
-            }
-        }
-
-        @keyframes sway {
-            0%, 100% {
-                transform: translateX(-50%) rotate(-5deg);
-            }
-            50% {
-                transform: translateX(-50%) rotate(5deg);
-            }
-        }
-    </style>
+    <title>CSS Tulip</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="tulip">
+        <div class="petal petal1"></div>
+        <div class="petal petal2"></div>
+        <div class="petal petal3"></div>
         <div class="stem"></div>
-        <div class="petal"></div>
+        <div class="leaf"></div>
     </div>
 </body>
 </html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glowing Tulip Flower</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000;
+            margin: 0;
+        }
+
+        .tulip {
+            position: relative;
+            width: 100px;
+            height: 200px;
+            animation: sway 2s infinite alternate;
+        }
+
+        .tulip .stem {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 10px;
+            height: 150px;
+            background-color: green;
+            transform: translateX(-50%);
+        }
+
+        .tulip .petal {
+            position: absolute;
+            bottom: 100px;
+            left: 50%;
+            width: 80px;
+            height: 100px;
+            background: linear-gradient(to bottom, #ff6347 0%, #ff4500 100%);
+            border-radius: 50% 50% 0 0;
+            transform: translateX(-50%) rotate(45deg);
+            box-shadow: 0 0 15px rgba(255, 69, 0, 0.5);
+            animation: glow 1.5s infinite alternate;
+        }
+
+        .tulip .petal::before,
+        .tulip .petal::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 100px;
+            background: linear-gradient(to bottom, #ff6347 0%, #ff4500 100%);
+            border-radius: 50% 50% 0 0;
+            box-shadow: 0 0 15px rgba(255, 69, 0, 0.5);
+            animation: glow 1.5s infinite alternate;
+        }
+
+        .tulip .petal::before {
+            left: -60px;
+            transform: rotate(-30deg);
+        }
+
+        .tulip .petal::after {
+            right: -60px;
+            transform: rotate(30deg);
+        }
+
+        @keyframes glow {
+            0% {
+                box-shadow: 0 0 15px rgba(255, 69, 0, 0.5);
+            }
+            100% {
+                box-shadow: 0 0 30px rgba(255, 69, 0, 0.9);
+            }
+        }
+
+        @keyframes sway {
+            0% {
+                transform: translateX(-50%) rotate(-5deg);
+            }
+            100% {
+                transform: translateX(-50%) rotate(5deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="tulip">
+        <div class="stem"></div>
+        <div class="petal"></div>
+    </div>
+</body>
+</html>

@@ -1,103 +1,69 @@
 body {
     margin: 0;
     padding: 0;
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #000;
-    overflow: hidden;
+    background: linear-gradient(to right, #ff7e5f, #feb47b); /* Background gradient similar to the sunset */
 }
 
-.garden {
+.tulip-field {
     display: flex;
-    justify-content: space-around;
+    flex-wrap: wrap;
     width: 100%;
-    max-width: 800px;
-    padding: 20px;
-}
-
-.tulip-container {
+    height: 80%;
     position: relative;
-    width: 100px;
-    height: 200px;
+    margin-top: 10%;
 }
 
 .tulip {
-    width: 100%;
+    width: 20px;
+    height: 60px;
+    position: relative;
+    margin: 5px;
+    transform-origin: bottom center;
+    animation: sway 3s infinite ease-in-out;
+}
+
+.tulip .stem {
+    width: 4px;
     height: 100%;
-    animation: sway 5s ease-in-out infinite alternate;
+    background: #228B22;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.tulip .flower {
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle at center, #ff1493, #ff69b4);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    border-radius: 50%;
+    box-shadow: 0 0 15px #ff1493, 0 0 25px #ff69b4, 0 0 35px #ff1493;
+    animation: glow 1.5s infinite alternate;
 }
 
 @keyframes sway {
-    0% {
-        transform: rotate(-2deg);
-    }
-    100% {
+    0%, 100% {
         transform: rotate(2deg);
     }
-}
-
-.flower {
-    transform-origin: bottom;
-}
-
-.petal {
-    transform-origin: bottom center;
-    animation: glow 2s ease-in-out infinite alternate, open 4s ease-in-out infinite alternate;
-    opacity: 0.8; /* Reduce opacity slightly to intensify glow */
-}
-
-.petal-1 {
-    animation-delay: 0s;
-}
-
-.petal-2 {
-    animation-delay: 1s;
-}
-
-.petal-3 {
-    animation-delay: 2s;
-}
-
-.petal-4 {
-    animation-delay: 3s;
-}
-
-.petal-5 {
-    animation-delay: 4s;
-}
-
-.petal-6 {
-    animation-delay: 5s;
-}
-
-.petal-7 {
-    animation-delay: 6s;
-}
-
-.petal-8 {
-    animation-delay: 7s;
-}
-
-.petal-9 {
-    animation-delay: 8s;
+    50% {
+        transform: rotate(-2deg);
+    }
 }
 
 @keyframes glow {
     0% {
-        filter: drop-shadow(0 0 10px #FF69B4); /* Increase shadow intensity */
+        box-shadow: 0 0 5px #ff1493, 0 0 10px #ff69b4, 0 0 15px #ff1493;
     }
     100% {
-        filter: drop-shadow(0 0 30px #FF1493); /* Increase shadow intensity */
-    }
-}
-
-@keyframes open {
-    0% {
-        transform: rotate(0deg) scale(1);
-    }
-    100% {
-        transform: rotate(20deg) scale(1.1);
+        box-shadow: 0 0 15px #ff1493, 0 0 25px #ff69b4, 0 0 35px #ff1493;
     }
 }

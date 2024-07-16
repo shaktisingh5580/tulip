@@ -1,62 +1,67 @@
 body {
     margin: 0;
+    padding: 0;
+    overflow: hidden;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: black;
+    background: linear-gradient(to right, #ff7e5f, #feb47b); /* Background gradient similar to the sunset */
+}
+
+.tulip-field {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 70%;
+    position: relative;
 }
 
 .tulip {
+    width: 20px;
+    height: 60px;
     position: relative;
-    width: 50px;
-    height: 150px;
+    transform-origin: bottom center;
+    animation: sway 3s infinite ease-in-out;
 }
 
-.petal {
-    position: absolute;
-    width: 50px;
-    height: 75px;
-    background: white;
-    border-radius: 50%;
-    transform: rotate(45deg);
-}
-
-.petal1 {
-    top: 0;
-    left: 0;
-    transform: rotate(45deg);
-}
-
-.petal2 {
-    top: 0;
-    left: 0;
-    transform: rotate(90deg);
-}
-
-.petal3 {
-    top: 0;
-    left: 0;
-    transform: rotate(135deg);
-}
-
-.stem {
+.tulip .stem {
+    width: 4px;
+    height: 100%;
+    background: #228B22;
     position: absolute;
     bottom: 0;
     left: 50%;
-    width: 10px;
-    height: 100px;
-    background: green;
     transform: translateX(-50%);
 }
 
-.leaf {
+.tulip .flower {
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle at center, #ff1493, #ff69b4);
     position: absolute;
-    bottom: 20px;
+    bottom: 100%;
     left: 50%;
-    width: 100px;
-    height: 30px;
-    background: green;
+    transform: translate(-50%, 0);
     border-radius: 50%;
-    transform: rotate(45deg) translateX(-50%);
+    box-shadow: 0 0 15px #ff1493, 0 0 25px #ff69b4, 0 0 35px #ff1493;
+    animation: glow 1.5s infinite alternate;
 }
+
+@keyframes sway {
+    0%, 100% {
+        transform: rotate(2deg);
+    }
+    50% {
+        transform: rotate(-2deg);
+    }
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 5px #ff1493, 0 0 10px #ff69b4, 0 0 15px #ff1493;
+    }
+    100% {
+        box-shadow: 0 0 15

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Glowing Tulip Flower</title>
+    <title>Beautiful Tulip Flower</title>
     <style>
         body {
             display: flex;
@@ -16,9 +16,9 @@
 
         .tulip {
             position: relative;
-            width: 100px;
-            height: 200px;
-            animation: sway 2s infinite alternate;
+            width: 50px;
+            height: 150px;
+            animation: sway 5s infinite ease-in-out;
         }
 
         .stem {
@@ -26,21 +26,21 @@
             bottom: 0;
             left: 50%;
             width: 10px;
-            height: 150px;
+            height: 100px;
             background-color: green;
             transform: translateX(-50%);
         }
 
         .petal {
             position: absolute;
-            bottom: 100px;
+            bottom: 90px;
             left: 50%;
             width: 60px;
             height: 100px;
-            background: radial-gradient(circle at bottom, #ff1493 0%, #ff69b4 100%);
+            background: radial-gradient(circle at bottom, #ff1493, #ff69b4);
             border-radius: 50% 50% 0 0;
-            transform: translateX(-50%);
-            animation: glow 1.5s infinite alternate;
+            transform: translateX(-50%) rotate(-30deg);
+            animation: glow 2s infinite alternate;
         }
 
         .petal::before,
@@ -49,37 +49,36 @@
             position: absolute;
             width: 60px;
             height: 100px;
-            background: radial-gradient(circle at bottom, #ff1493 0%, #ff69b4 100%);
+            background: radial-gradient(circle at bottom, #ff1493, #ff69b4);
             border-radius: 50% 50% 0 0;
-            box-shadow: 0 0 15px rgba(255, 69, 0, 0.5);
         }
 
         .petal::before {
-            transform: rotate(-30deg);
+            transform: rotate(30deg);
             transform-origin: bottom right;
             left: -30px;
         }
 
         .petal::after {
-            transform: rotate(30deg);
+            transform: rotate(-30deg);
             transform-origin: bottom left;
             right: -30px;
         }
 
         @keyframes glow {
             0% {
-                box-shadow: 0 0 15px rgba(255, 69, 0, 0.5);
+                box-shadow: 0 0 15px rgba(255, 105, 180, 0.5);
             }
             100% {
-                box-shadow: 0 0 30px rgba(255, 69, 0, 0.9);
+                box-shadow: 0 0 30px rgba(255, 105, 180, 1);
             }
         }
 
         @keyframes sway {
-            0% {
+            0%, 100% {
                 transform: translateX(-50%) rotate(-5deg);
             }
-            100% {
+            50% {
                 transform: translateX(-50%) rotate(5deg);
             }
         }

@@ -21,7 +21,7 @@
             animation: sway 2s infinite alternate;
         }
 
-        .tulip .stem {
+        .stem {
             position: absolute;
             bottom: 0;
             left: 50%;
@@ -31,39 +31,39 @@
             transform: translateX(-50%);
         }
 
-        .tulip .petal {
+        .petal {
             position: absolute;
             bottom: 100px;
             left: 50%;
-            width: 80px;
+            width: 60px;
             height: 100px;
-            background: linear-gradient(to bottom, #ff6347 0%, #ff4500 100%);
+            background: radial-gradient(circle at bottom, #ff1493 0%, #ff69b4 100%);
             border-radius: 50% 50% 0 0;
-            transform: translateX(-50%) rotate(45deg);
-            box-shadow: 0 0 15px rgba(255, 69, 0, 0.5);
+            transform: translateX(-50%);
             animation: glow 1.5s infinite alternate;
         }
 
-        .tulip .petal::before,
-        .tulip .petal::after {
+        .petal::before,
+        .petal::after {
             content: '';
             position: absolute;
-            width: 80px;
+            width: 60px;
             height: 100px;
-            background: linear-gradient(to bottom, #ff6347 0%, #ff4500 100%);
+            background: radial-gradient(circle at bottom, #ff1493 0%, #ff69b4 100%);
             border-radius: 50% 50% 0 0;
             box-shadow: 0 0 15px rgba(255, 69, 0, 0.5);
-            animation: glow 1.5s infinite alternate;
         }
 
-        .tulip .petal::before {
-            left: -60px;
+        .petal::before {
             transform: rotate(-30deg);
+            transform-origin: bottom right;
+            left: -30px;
         }
 
-        .tulip .petal::after {
-            right: -60px;
+        .petal::after {
             transform: rotate(30deg);
+            transform-origin: bottom left;
+            right: -30px;
         }
 
         @keyframes glow {
